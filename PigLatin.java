@@ -2,23 +2,22 @@ import java.util.*;
 public class PigLatin {
   public static void main (String[] args) {
     Scanner l = new Scanner (System.in);
-    while (l.hasNextLine()) {
+    while (l.hasNext()) {
       String line = l.nextLine();
       System.out.println(pigLatinSimple(line));
     }
   }
 
   public static String pigLatinSimple (String s) {
+    String sentence = ""; // will hold whole modified line
 
     Scanner w = new Scanner(s);
-    String toTest = "";
-    String changed = "";
-    String sentence = "";
-    String word = "";
+
 
     while (w.hasNext()) {
-      toTest = w.next();
-      String wTest = toTest.toLowerCase();
+      String changed = ""; // changed ver of mod word
+      String toTest = w.next(); // word to mod
+      String wTest = toTest.toLowerCase(); // lowercase of mod word
 
       if (wTest.charAt(0) == 'a' || wTest.charAt(0) == 'e' || wTest.charAt(0) == 'i' ||
           wTest.charAt(0) == 'o' || wTest.charAt(0) == 'u') {
