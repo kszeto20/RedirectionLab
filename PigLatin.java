@@ -94,7 +94,8 @@ public class PigLatin {
       String punc = "";
 
       if (!(Character.isLetter(wTest.charAt(0)))) {
-        sentence = wTest + " ";
+        changed = wTest + " ";
+        sentence += changed;
       }
       else {
           if (!(Character.isLetter((wTest.charAt(wTest.length() - 1))))) {
