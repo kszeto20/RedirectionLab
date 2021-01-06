@@ -9,6 +9,7 @@ public class PigLatin {
   }
 
   public static String pigLatinSimple (String s) {
+    String[] vowels = {"a", "e", "i", "o", "u"};
     String sentence = ""; // will hold whole modified line
 
     Scanner w = new Scanner(s);
@@ -18,8 +19,7 @@ public class PigLatin {
       String toTest = w.next(); // word to mod
       String wTest = toTest.toLowerCase(); // lowercase of mod word
 
-      if (wTest.charAt(0) == 'a' || wTest.charAt(0) == 'e' || wTest.charAt(0) == 'i' ||
-          wTest.charAt(0) == 'o' || wTest.charAt(0) == 'u') {
+      if (Arrays.asList(vowels).contains(wTest.substring(0, 1))) {
         for (int i = 0; i < wTest.length(); i++) {
           changed += wTest.substring(i, i + 1);
         }
@@ -38,6 +38,7 @@ public class PigLatin {
   }
 
   public static String pigLatin (String s) {
+    String[] vowels = {"a", "e", "i", "o", "u"};
     String[] diagraphs =  {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr",
                            "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc",
                            "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th",
@@ -51,8 +52,7 @@ public class PigLatin {
       String toTest = w.next(); // word to mod
       String wTest = toTest.toLowerCase(); // lowercase of mod word
 
-      if (wTest.charAt(0) == 'a' || wTest.charAt(0) == 'e' || wTest.charAt(0) == 'i' ||
-          wTest.charAt(0) == 'o' || wTest.charAt(0) == 'u') {
+      if (Arrays.asList(vowels).contains(wTest.substring(0, 1))) {
         for (int i = 0; i < wTest.length(); i++) {
           changed += wTest.substring(i, i + 1);
         }
